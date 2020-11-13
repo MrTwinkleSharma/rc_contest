@@ -28,7 +28,7 @@ Output the number of city(which is inside the biggest region) in which they can 
 2 3<br/>
 3 1<br/>
 ### Sample Output 1
-<img src = "1.jpg">
+<img src = "1.png">
 3 <br/>
 In this scenario driver can start from his godown 1-->2-->3 he can come back to there, in this way he visited atmost 3 city.
 ### Sample Input 2
@@ -43,7 +43,7 @@ In this scenario driver can start from his godown 1-->2-->3 he can come back to 
 5 3<br/>
 
 ### Sample Output 2
-<img src = "2.jpg">
+<img src = "2.png">
 1<br/>
 In this scenario wherever they unload their material there is no such path via driver can get back to his godown after distributing the goods.
 

@@ -2,6 +2,7 @@
 using namespace std;
 
 unordered_map<int,vector<int>> adjList_Graph,adjList_revGraph;
+int cities_covered = 0;
 void DFS1(int i,vector<bool>& visited, stack<int>& mystack)
 {
 	visited[i]=true;
@@ -11,18 +12,19 @@ void DFS1(int i,vector<bool>& visited, stack<int>& mystack)
 
 	mystack.push(i);
 }
-void DFS2(int i,vector<bool>& visited)
+int DFS2(int i,vector<bool>& visited)
 {
-	cout<<i<<" ";
+	cities_covered++;
 	visited[i] = true;
 	for(int j: adjList_revGraph[i])
 		if(!visited[j])
 			DFS2(j,visited);
+	return cities_covered;
 }
 
 int main()
 {
-	int n,p,city_i, city_j;
+	int n,p,city_i, city_j,max_cities_covered = 0;
 	cin>>n>>p;
 	for(int i=0;i<p;i++)
 	{
@@ -52,10 +54,15 @@ int main()
 		mystack.pop();
 		if(visited[curr]==false)
 		{
-			DFS2(curr,visited);
-			cout<<"\n";
+			cities_covered = DFS2(curr,visited);
+			//cout<<cities_covered<<"\n";
+			if (max_cities_covered==0) max_cities_covered = cities_covered;
+			max_cities_covered = cities_covered>=max_cities_covered?cities_covered:max_cities_covered;
+		
+		    cities_covered = 0;
 		}
 	}
+	cout<<"Max Cities He can cover is:- "<<max_cities_covered;
 
 	return 0;
 }

@@ -25,13 +25,14 @@ int DFS2(int i,vector<bool>& visited)
 int main()
 {
 	int n,p,city_i, city_j,max_cities_covered = 0;
+	stack<int> mystack;
 	cin>>n>>p;
 	for(int i=0;i<p;i++)
 	{
 		cin>>city_i>>city_j;
 	    adjList_Graph[city_i].push_back(city_j); 
 	}
-	stack<int> mystack;
+	
 
 	vector<bool> visited(n,false);
 	for(int i=0;i<n;++i)
@@ -47,7 +48,6 @@ int main()
 	for(int i=0;i<n;++i)
 		visited[i] = false;
 
-	cout<<"Strongly Connected Components are:\n";
 	while(!mystack.empty())
 	{
 		int curr = mystack.top();

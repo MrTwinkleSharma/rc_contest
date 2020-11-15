@@ -33,7 +33,9 @@ int main()
         }
         
 	}
-	cout<<total;
+	if(flag==0)
+	total+=a[n-1];
+	cout<<total<<"\n";
+
 	return 0;
 }
-

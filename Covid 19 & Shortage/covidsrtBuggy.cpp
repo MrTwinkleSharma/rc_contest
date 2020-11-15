@@ -2,30 +2,28 @@
 using namespace std;
 
 //Graph Data Structure 
-unordered_map<int,vector<int>> adjList_Graph,adjList_revGraph;
+unordered_map<int,vector<int>> adjList_Graph1,adjList_Graph2;
 
-//Global Variable to be used in Recursive Function
+
 int cities_covered = 0;
 
-//Depth First Search on Original Graph 
-void DFS1(int i,vector<bool>& visited, stack<int>& mystack)
+void FunctionForGraph1(int i,vector<bool>& flag, stack<int>& mystack)
 {
-	visited[i]=true;
-	for(int j: adjList_Graph[i])
-		if(visited[j]==false)
-			DFS1(j,visited,mystack);
+	flag[i]=true;
+	for(int j: adjList_Graph1[i])
+		if(flag[j]==false)
+			FunctionForGraph1(j,flag,mystack);
 
 	mystack.push(i);
 }
 
-//Depth First Search on Reversed Graph (Actually this Gives Answer)
-int DFS2(int i,vector<bool>& visited)
+int FunctionForGraph2(int i,vector<bool>& flag)
 {
 	cities_covered++;
-	visited[i] = true;
-	for(int j: adjList_revGraph[i])
-		if(!visited[j])
-			DFS2(j,visited);
+	flag[i] = true;
+	for(int j: adjList_Graph2[i])
+		if(!flag[j])
+			FunctionForGraph2(j,flag);
 	return cities_covered;
 }
 
@@ -44,35 +42,37 @@ int main()
 	for(int i=0;i<p;i++)
 	{
 	    cin>>city_i>>city_j;
-	    adjList_Graph[city_i].push_back(city_j); 
+	    adjList_Graph1[city_i].push_back(city_j); 
 	}
 	
-	//Initializing visited to false for each cities
-	vector<bool> visited(n,false);
+	//Initializing flag to false for each cities because driver is in warehouse in starting
+	vector<bool> flag(n,false);
+	
+	
 	for(int i=0;i<n;++i)
-		if(!visited[i])
-			DFS1(i,visited,mystack);
+		if(!flag[i])
+			FunctionForGraph1(i,flag,mystack);
 
-	//Reversing The Graph after storing the DFS on original Graph with Stack
+	
 	for(int i=0;i<n;++i)
 	{
-		for(int j: adjList_Graph[i])
-			adjList_revGraph[j].push_back(i);
+		for(int j: adjList_Graph1[i])
+			adjList_Graph2[j].push_back(i);
 	}
 	
-	//Again Set visited = False to each city
+
 	for(int i=0;i<n;++i)
-		visited[i] = false;
+		flag[i] = false;
 	
 
 	//Main Algorithm to Find the Maximum Cities which can be covered in whole drive
 	while(!mystack.empty())
 	{
-		int curr = mystack.top();
+		int temp = mystack.top();
 		mystack.pop();
-		if(visited[curr]==false)
+		if(flag[temp]==false)
 		{
-			cities_covered = DFS2(curr,visited);
+			cities_covered = FunctionForGraph2(temp,flag);
 			//cout<<cities_covered<<"\n";
 			if (max_cities_covered==0) max_cities_covered = cities_covered;
 			max_cities_covered = cities_covered>=max_cities_covered?cities_covered:max_cities_covered;

@@ -1,6 +1,6 @@
 # Max Sum with Subarray
   David is a mathematics student he likes to create and solve problems, today he is solving a problem and the scenario is a array of length n [a1, a2 a3, ........an] is given to him, and he has to choose a non-empty subsequence of array of length less than or equal to n like the indices choosen wil be [1<= p1 < p2 < p3 .... k<=n]
-let say he chooses the array p1, p2, p3, ....pk these all numbers are in sequence and selected from original array. Now according to question the sum of array is defined as p1 - p2 + p3 - p4 +..... + pk <br/> Now your Task is to maximize this sum according to question.
+let say he chooses the indices p1, p2, p3, ....pk and the array will be [b1, b2, b3......bk]these all numbers are in sequence and selected from original array. Now according to question the sum of array is defined as b1 - b2 + b3 - b4 +..... + bk <br/> Now your Task is to maximize this sum according to question.
  
 ### Constraints
 

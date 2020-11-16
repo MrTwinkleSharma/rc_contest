@@ -1,13 +1,21 @@
 # Covid19 and Shortage
-Few Months back, Due to Covid-19 the Government ordered a nationwide lockdown, limiting movement of the entire population of India as a preventive measure against pandemic. They also banned some of the roads between regions and cities.<br/>
-This cause shortage of Food and other important things in various places, that's why Government came with a solution to supply all of these needy thing with full safety and preventive measures and so they decided to give special permission to any transportation company to deliver the material among cities, according to this special permission that group of trucks can go anywhere and unload their material in any city. And after unloading they kept one of their driver with a truck in that city to take care of the Warehouse and distributing goods. but the condition is he will have to follow the common rule for transportation, means now he doesn't have special permission to go anywhere while distributing the goods and also he must ensure that there will be a path to come back to Warehouse.<br/>
- Common rule of Transportation are :<br/>
- - One Can go from any city 1 to 2 if 1 --> 2<br/>
- - " -->" means that there is a path between city 1 and 2 directed from 1 to 2<br/>
-
-Suppose you're working in IT sector of that company now your task is to calculate the maximum number of cities. in which they can distribute their material by unloading it in any city. <br/>
+Due to Covid-19 there was a nationwide lockdown, limiting movement of the entire population as a preventive measure against pandemic, also  some of the roads between regions and cities were banned.<br/>
+The ban of transportation caused shortage of Food and other important things in various places, that's why Government came with a solution to supply all of these needy thing with full safety and preventive measures and so they decided to give special permission to any transportation company to deliver the material among cities
+**According to this special permission that group of trucks can go anywhere in any city and unload their material there.** And after unloading they kept one of their driver with a truck in that city to take care of the Warehouse and distributing goods. 
+**But the conditions are** 
+1. Driver will have to follow the **common rule for transportation**, means now after unloading he doesn't have special permission to go anywhere while distributing the goods.
+2. Also he must ensure that there will be a path to **come back to Warehouse** after distribution among all cities.<br/>
  
-### Constraints<br/>
+ **Common rule of Transportation is** :<br/>
+ One Can go from any city 1 to 2 if 1 --> 2, i.e. there is a path between city 1 and 2 directed from 1 to 2<br/>
+ 
+
+Suppose you're working in IT sector of that Transportation company now your task is to calculate the maximum number of cities. in which they can distribute their material by unloading it in any city. <br/>
+ 
+### Constraints
+0 <= n <=  <br/>
+1 <= p <= <br/>
+All Paths must be in between cities 0 to n-1 <br/>
 ### Input Format 
 ```
 First Line will Contains Number of t testcases 

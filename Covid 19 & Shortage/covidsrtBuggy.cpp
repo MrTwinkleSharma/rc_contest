@@ -70,17 +70,20 @@ int main()
 
 	//Main Algorithm to Find the Maximum Cities which can be covered in whole drive
 	while(!mystack.empty())
-	{
+	{     
+		int current_max;
 		int temp = mystack.top();
 		mystack.pop();
 		if(flag[temp]==false)
 		{
-			cities_covered = FunctionForGraph2(temp,flag);
 			
-			if (max_cities_covered==0) max_cities_covered = cities_covered;
-			max_cities_covered = cities_covered>=max_cities_covered?cities_covered:max_cities_covered;
+			cities_covered = FunctionForGraph2(temp,flag);
 		
-		    cities_covered = 0;
+			if (max_cities_covered <= current_max)
+			{ 
+				current_max = cities_covered;
+				max_cities_covered = current_max;
+			}
 		}
 	}
 	/********Max Cities He can cover is********/

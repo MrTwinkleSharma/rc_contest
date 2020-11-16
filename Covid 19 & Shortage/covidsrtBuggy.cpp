@@ -11,9 +11,9 @@ void FunctionForGraph1(int i,vector<bool>& flag, stack<int>& mystack)
 {
 	flag[i]=true;
 	for(int j: adjList_Graph1[i])
-		if(flag[j]==false)
+		if(flag[j]==false && i%j!=0)
 			FunctionForGraph1(j,flag,mystack);
-
+    
 	mystack.push(i);
 }
 
@@ -57,12 +57,15 @@ int main()
 	for(int i=0;i<n;++i)
 	{
 		for(int j: adjList_Graph1[i])
-			adjList_Graph2[j].push_back(i);
+			adjList_Graph2[i].push_back(j);
 	}
 	
 
 	for(int i=0;i<n;++i)
-		flag[i] = false;
+	{
+		    for(int j: adjList_Graph1[i])
+		    flag[j] = false;
+	}
 	
 
 	//Main Algorithm to Find the Maximum Cities which can be covered in whole drive
@@ -73,14 +76,15 @@ int main()
 		if(flag[temp]==false)
 		{
 			cities_covered = FunctionForGraph2(temp,flag);
-			//cout<<cities_covered<<"\n";
+			
 			if (max_cities_covered==0) max_cities_covered = cities_covered;
 			max_cities_covered = cities_covered>=max_cities_covered?cities_covered:max_cities_covered;
 		
 		    cities_covered = 0;
 		}
 	}
-	cout<<"Max Cities He can cover is:- "<<max_cities_covered;
+	/********Max Cities He can cover is********/
+	cout<<max_cities_covered;
 
 	return 0;
 }

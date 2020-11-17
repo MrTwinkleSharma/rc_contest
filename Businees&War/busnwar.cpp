@@ -4,7 +4,8 @@ int m,n;
 	
 bool visited[10001][10001];
 char ArrayMatrix[10001][10001];
-
+int move_in_x[] = {-1,0,1,0};
+int move_in_y[] = {0,1,0,-1};
 
 bool is_Valid_Move(int x, int y)
 {
@@ -18,17 +19,12 @@ bool is_Valid_Move(int x, int y)
 void DFS(int x, int y)
 {
 	visited[x][y] = true;
-	if(is_Valid_Move(x-1,y))
-	DFS(x-1,y);
+	for(int i=0;i<4;i++)
+	{
+		if(is_Valid_Move(x+move_in_x[i], move_in_y[i]))
+			DFS((x+move_in_x[i], move_in_y[i]);	
+	}
 	
-	if(is_Valid_Move(x,y+1))
-	DFS(x,y+1);
-	
-	if(is_Valid_Move(x+1,y))
-	DFS(x+1,y);
-	
-	if(is_Valid_Move(x,y-1))
-	DFS(x,y-1);
 }
 
 int main()

@@ -40,11 +40,19 @@ int main()
 	//Input for Dimension
 	cin>>m>>n;
 	
+	//kidnappedMen Counter
+	int kidnappedMen = 0;
+	
 	//Input for Graphical Representation 
 	for(int i=1;i<=m;i++)
 	{
 		for(int j=1;j<=n;j++)
-		cin>>ArrayMatrix[i][j];		
+		{
+		    cin>>ArrayMatrix[i][j];	
+		    
+    		if(ArrayMatrix[i][j]=='P')
+    		kidnappedMen++;
+	    }
 	}
 	
 	//Counter to be set for finding minimum number of place to be visited
@@ -60,7 +68,7 @@ int main()
 			Minimum_Number_Places++;			
 		}
 	}
-	cout<<Minimum_Number_Places<<"\n";
+	cout<<Minimum_Number_Places<<" "<<kidnappedMen<<"\n";
 	return 0;
 }
 

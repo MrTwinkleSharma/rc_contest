@@ -33,31 +33,34 @@ Output the minimum number of region where Guddu Pandit have to send their more a
 ```
 
 ### Sample Input 1
-7 6 
-G	G	G	G	G	G
-G	P	G	G	G	G
-G	P	P	G	P	G
-G	G	G	G	P	G
-G	P	G	G	P	G
-G	P	P	G	G	G
-G	G	G	G	G G
+7 6 </br>
+G	G	G	G	G	G</br>
+G	P	G	G	G	G</br>
+G	P	P	G	P	G</br>
+G	G	G	G	P	G</br>
+G	P	G	G	P	G</br>
+G	P	P	G	G	G</br>
+G	G	G	G	G G</br>
 
 
 
 ### Sample Output 1
-3 9
-
+3 9<br/>
+<img src = "1st.png"><br/>
+It is Obvious to see from Graphical Representation that there is total 3 different Places where Gaitonde kept those all 9 Kidnapped men.
 ### Sample Input 2
-9 8 
-G	G	G	G	G	G	G	G
-G	P	G	G	G	G	G	G
-G	P	P	G	P	G	P	G
-G	G	G	G	P	G	P	G
-G	P	G	G	P	G	P	G
-G	P	P	G	G	G	G	G
-G	G	G	G	G	P	P	G
-G	G	G	G	P	P	P	G
-G	G	G	G	G	G	G	G
+9 8 </br>
+G	G	G	G	G	G	G	G</br>
+G	P	G	G	G	G	G	G</br>
+G	P	P	G	P	G	P	G</br>
+G	G	G	G	P	G	P	G</br>
+G	P	G	G	P	G	P	G</br>
+G	P	P	G	G	G	G	G</br>
+G	G	G	G	G	P	P	G</br>
+G	G	G	G	P	P	P	G</br>
+G	G	G	G	G	G	G	G</br>
 
 ### Sample Output 2
-5 17
+5 17<br/>
+<img src = "2nd.png"><br/>
+It is Obvious to see from Graphical Representation that there is total 5 different Places where Gaitonde kept those all 17 Kidnapped men.

@@ -3,20 +3,22 @@ using namespace std;
 
 int main() 
 {
-	const int MAX_N = 100001;
+	const int MAX_N = 122;
 
 	int n, x,t;
   
-	vector<long long int> dp(MAX_N, 0);
-	vector<long long int>  count(MAX_N, 0);
+	vector<long long int> dp(122, 0);
+	vector<long long int>  count(122, 0);
   while(t--){
   //Storing Number of Characters in the Player's Array
 	cin >> n;
- 
+ 	char ith_character;
   //Taking Input of n characters accordingly and incrementing the frequency of that Number in a Vector
 	while(n--) {
-		cin >> x;
-		count[x]++;
+		
+		cin >> ith_character;
+		
+		count[int(ith_character)]++;
 	}
 
 	dp[0] = 0;

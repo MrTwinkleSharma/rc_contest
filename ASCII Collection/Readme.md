@@ -30,9 +30,21 @@ a b c V s d e A<br/>
 ### Sample Output 1
 563<br/>
 -----------Explanation-----------<br/>
-ASCII Code of these characters are:- <br/>
+ASCII Code of these characters are as Following <br/>
 a b c V s d e A<br/>
 97 98 99 86 115 100 101 65<br/>
+##### Choose Step By Step like:-
+| Score | Array |  Removed (+ and -) | Added |
+| ------ | ------ |  ----------  | ----------  |
+| 0 | a b c V s d e A  |   None | A = 65|
+| 65 | a b c V s d e |None | V = 86|
+| 151 | a b c s d e |None | a = 97|
+| 248 |  c s d e |b | c = 99|
+| 347 |   s d e  |d | e = 101|
+| 448 |   s |None| s = 115|
+| 563 | Empty Now|None |NuLL|
+<br/>
+This answer is Maximum You can try your own manual try but you will unable to find more than this.
 
 ### Sample Input 2
 2<br/>
@@ -45,12 +57,12 @@ A B D e d E e e j k l s e S D E G<br/>
 374<br/>
 1091<br/>
 -----------Explanation-----------<br/>
-ASCII Code of these characters are:- <br/>
+ASCII Code of these characters are as Following<br/>
 e e f A j k <br/>
 101 101 102 65 106 107<br/>
 
 
 
-ASCII Code of these characters are:- <br/>
+ASCII Code of these characters are as Following <br/>
 A B D e d E e e j k l s e S D E G<br/>
 65 66 68 101 100 69 101 101 106 107 108 115 101 83 68 69 71<br/>
